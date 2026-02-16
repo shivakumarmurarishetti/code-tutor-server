@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const API_KEY = "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"; // 🔐 keep private
+const API_KEY = process.env.GROQ_API_KEY;// 🔐 keep private
 
 
 app.post("/ai", async (req, res) => {
@@ -59,3 +59,4 @@ app.post("/ai", async (req, res) => {
 app.listen(3000, () => {
   console.log("🚀 Code Tutor server running on http://localhost:3000");
 });
+
